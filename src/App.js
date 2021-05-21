@@ -81,7 +81,7 @@ class App extends Component {
     return (
       <>
         <header className="App-header">
-          <h1>React Photo Gallery</h1>
+          <h1>React Photo Gallery <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button></h1>
         </header>
 
         {/* Photo.js : Child Component 1: Yuri */}
