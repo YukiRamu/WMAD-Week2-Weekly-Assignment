@@ -1,1 +1,64 @@
-/* No CSS *//*# sourceMappingURL=Form.css.map */
+.formModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.676);
+}
+
+.formModal .editForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.613);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 3rem;
+}
+
+.formModal .editForm .closeBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 0%;
+  right: 5%;
+  margin: 1rem;
+}
+
+.formModal .editForm .oldTitle {
+  margin: 1rem;
+}
+
+.formModal .editForm .oldTitle span {
+  font-weight: bold;
+}
+
+.formModal .editForm .newTitle {
+  margin: 1rem;
+  font-weight: bold;
+}
+
+.formModal .editForm .newTitle .titleInput {
+  margin-left: 1rem;
+}
+
+.formModal .editForm .saveBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  bottom: 0%;
+  left: 5%;
+  margin: 1rem;
+}
+/*# sourceMappingURL=Form.css.map */
