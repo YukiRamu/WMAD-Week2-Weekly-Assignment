@@ -1,5 +1,6 @@
 //import './App.css';
 import React, { Component } from 'react';
+import "./App.css";
 import Photo from "./component/Photo/Photo";
 import Form from "./component/Form/Form";
 import NavBar from "./component/NavBar/NavBar";
@@ -54,7 +55,7 @@ class App extends Component {
     });
   };
 
-   /**  add new image form **/
+  /**  add new image form **/
   addNewImage = () => {
     console.log("add new clicked");
     //show modal
@@ -122,7 +123,7 @@ class App extends Component {
     return (
       <>
         <header className="App-header">
-          <h1>React Photo Gallery <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button></h1>
+          <h1>React Photo Gallery</h1>
         </header>
 
         {/* NavBar.js : Child Component 3: Yuki */}
@@ -133,7 +134,7 @@ class App extends Component {
           editDisplay={this.state.editDisplay} />
 
         {/* Photo.js : Child Component 1 : Yuri */}
-        < Photo photos={photos} deletePhotos = {this.deletePhotos} editTitle = {this.editTitle} />; 
+        < Photo photos={photos} deletePhotos={this.deletePhotos} editTitle={this.editTitle} />;
 
 
         {/* Form.js : Child Component 2: Yuki */}
