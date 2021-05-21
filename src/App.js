@@ -24,13 +24,21 @@ class App extends Component {
             this.setState({
               photos: photoData
             });
-            console.log(this.state.photos)
           });
       });
   }
 
   /* **************** Photo.js control (Yuri) **************** */
   //delete method (Yuri)
+
+  deletePhotos = id => {
+    let currentPhotoList = this.state.photos; 
+    let newPhotoList = currentPhotoList.filter(photo => photo.id !== id); 
+    this.setState({
+      photos: newPhotoList
+    }); 
+  }; 
+
 
 
 
