@@ -1,6 +1,6 @@
-import './App.css';
+//import './App.css';
 import React, { Component } from 'react';
-import Photo from "./Photo";
+import Photo from "./component/Photo/Photo"; 
 import Form from "./component/Form/Form";
 
 class App extends Component {
@@ -20,9 +20,11 @@ class App extends Component {
         }
         res.json()
           .then(data => {
+            const photoData = data.filter(data => data.id < 20 ); 
             this.setState({
-              photos: data
+              photos: photoData
             });
+            console.log(this.state.photos)
           });
       });
   }
@@ -77,12 +79,17 @@ class App extends Component {
   };
 
   render() {
-    const { photos } = this.state;
+
+    const {photos} = this.state; 
+    
     return (
       <>
         <header className="App-header">
           <h1>React Photo Gallery <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button></h1>
         </header>
+        {/* Photo.js : Child Component 1 */}
+        < Photo photos={photos} deletePhotos = {this.deletePhotos}/>; 
+        {/* Form.js : Child Component 2 */}
 
         {/* Photo.js : Child Component 1: Yuri */}
         < Photo photos={photos} deletePhotos={this.deletePhotos} editTitle={this.editTitle} />
