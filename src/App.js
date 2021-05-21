@@ -20,8 +20,10 @@ class App extends Component {
         }
         res.json()
           .then(data => {
+            let filteredData = data.filter(elem => elem.id <= 20);
+            console.log(filteredData);
             this.setState({
-              photos: data
+              photos: filteredData
             });
           });
       });
@@ -83,6 +85,12 @@ class App extends Component {
         <header className="App-header">
           <h1>React Photo Gallery <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button></h1>
         </header>
+
+        {/* Filter.js : Child Component 3: Yuki */}
+        <nav className="navBar">
+          <button type="button">Sort by title</button>
+          <button type="button">Sort by color</button>
+        </nav>
 
         {/* Photo.js : Child Component 1: Yuri */}
         < Photo photos={photos} deletePhotos={this.deletePhotos} editTitle={this.editTitle} />
