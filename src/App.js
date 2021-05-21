@@ -31,6 +31,15 @@ class App extends Component {
   /* **************** Photo.js control (Yuri) **************** */
   //delete method (Yuri)
 
+  deletePhotos = id => {
+    let currentPhotoList = this.state.photos; 
+    let newPhotoList = currentPhotoList.filter(photo => photo.id !== id); 
+    this.setState({
+      photos: newPhotoList
+    }); 
+  }; 
+
+
 
 
   /* **************** Form.js control (Yuki) **************** */
