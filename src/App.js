@@ -1,39 +1,40 @@
 import './App.css';
 import React, { Component } from 'react';
-import Photo from "./Photo"; 
+import Photo from "./Photo";
 import Form from "./component/Form/Form";
 
 class App extends Component {
   //fetch API (Yuri)
   state = {
-    photos: []
+    photos: [],
     formDisplay: "block" //default none
-  };  
-  
- //fetch API (Yuri)
-  componentDidMount () {
-    fetch ("https://jsonplaceholder.typicode.com/photos")
-    .then(res => {
-      if (res.status !== 200){
-        console.log (`This is a error ${res.status}`); 
-      }
-      res.json()
-      .then(data => {
-        this.setState({
-          photos:data
-        }); 
-      }); 
-    }); 
-  }
-  
-  /* **************** Photo.js control (Yuri)　**************** */
-  //delete method (Yuri)
-  
-  
+  };
 
-  /* **************** Form.js control (Yuki)　**************** */
-  //edit method
-  editTitle = () => {
+  //fetch API (Yuri)
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then(res => {
+        if (res.status !== 200) {
+          console.log(`This is a error ${res.status}`);
+        }
+        res.json()
+          .then(data => {
+            this.setState({
+              photos: data
+            });
+          });
+      });
+  }
+
+  /* **************** Photo.js control (Yuri) **************** */
+  //delete method (Yuri)
+
+
+
+  /* **************** Form.js control (Yuki) **************** */
+  //edit method : will get id as a parameter
+  editTitle = (id) => {
+
     //show modal
     this.setState({
       formDisplay: "block"
@@ -59,14 +60,14 @@ class App extends Component {
   };
 
   render() {
-    const {photos} = this.state; 
+    const { photos } = this.state;
     return (
       <>
         <header className="App-header">
           <h1>React Photo Gallery</h1>
         </header>
         {/* Photo.js : Child Component 1: Yuri */}
-        < Photo photos = {photos} deletePhotos = {this.deletePhotos}/>; 
+        < Photo photos={photos} deletePhotos={this.deletePhotos} />;
         {/* Form.js : Child Component 2: Yuki */}
         <Form
           formDisplay={this.state.formDisplay}
