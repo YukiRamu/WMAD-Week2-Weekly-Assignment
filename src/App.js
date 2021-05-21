@@ -32,14 +32,16 @@ class App extends React.Component {
   //display none --> blockにするfunction
 
   render() {
+
     const {photos} = this.state; 
+    
     return (
       <>
         <header className="App-header">
           <h1>Weekly Assignment</h1>
         </header>
         {/* Photo.js : Child Component 1 */}
-        < Photo photos = {photos} deletePhotos = {this.deletePhotos}/>; 
+        < Photo photos={photos} deletePhotos = {this.deletePhotos}/>; 
         {/* Form.js : Child Component 2 */}
 
       </>
