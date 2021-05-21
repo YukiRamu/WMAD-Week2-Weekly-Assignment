@@ -2,12 +2,14 @@
 import React, { Component } from 'react';
 import Photo from "./component/Photo/Photo";
 import Form from "./component/Form/Form";
+import NavBar from "./component/NavBar/NavBar";
 
 class App extends Component {
   //fetch API (Yuri)
   state = {
     photos: [],
-    formDisplay: "none", //default none
+    formDisplay: "none", //edit form
+    editDisplay: "none", //add new form
     singlePhoto: {} //for form
   };
 
@@ -32,15 +34,42 @@ class App extends Component {
   //delete method (Yuri)
 
   deletePhotos = id => {
-    let currentPhotoList = this.state.photos; 
-    let newPhotoList = currentPhotoList.filter(photo => photo.id !== id); 
+    let currentPhotoList = this.state.photos;
+    let newPhotoList = currentPhotoList.filter(photo => photo.id !== id);
     this.setState({
       photos: newPhotoList
-    }); 
-  }; 
+    });
+  };
 
+  /* **************** NavBar.js control (Yuki) **************** */
+  /** sort by title **/
+  sortByTitle = () => {
+    //alphabetical sort : ascending order
+    let sortedPhotos = this.state.photos.sort((a, b) =>
+      a.title.split(' ')[0] < b.title.split(' ')[0] ? -1 : 1
+    );
+    //setState
+    this.setState({
+      photos: sortedPhotos
+    });
+  };
 
+   /**  add new image form **/
+  addNewImage = () => {
+    console.log("add new clicked");
+    //show modal
+    this.setState({
+      editDisplay: "block"
+    });
+  };
 
+  //close button clicked
+  closeEditForm = () => {
+    //hide modal
+    this.setState({
+      editDisplay: "none"
+    });
+  };
 
   /* **************** Form.js control (Yuki) **************** */
   //edit method : will get id as a parameter from Photo.js
@@ -95,15 +124,17 @@ class App extends Component {
         <header className="App-header">
           <h1>React Photo Gallery <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button></h1>
         </header>
+
+        {/* NavBar.js : Child Component 3: Yuki */}
+        <NavBar
+          sortByTitle={this.sortByTitle}
+          addNewImage={this.addNewImage}
+          closeEditForm={this.closeEditForm}
+          editDisplay={this.state.editDisplay} />
+
         {/* Photo.js : Child Component 1 : Yuri */}
         < Photo photos={photos} deletePhotos = {this.deletePhotos} editTitle = {this.editTitle} />; 
 
-
-        {/* Filter.js : Child Component 3: Yuki */}
-        <nav className="navBar">
-          <button type="button">Sort by title</button>
-          <button type="button">Sort by color</button>
-        </nav>
 
         {/* Form.js : Child Component 2: Yuki */}
         <Form

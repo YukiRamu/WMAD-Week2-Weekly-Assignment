@@ -2,7 +2,6 @@
 import React from 'react';
 
 export default function Photo(props) {
-    console.log(props)
     return (
 
         <div className= "App">

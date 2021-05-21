@@ -1,0 +1,144 @@
+.navBar {
+  margin-bottom: 1rem;
+}
+
+.navBar .sortTitleBtn,
+.navBar .addNewBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1rem;
+  border: none;
+  color: white;
+  background-color: #a49393;
+  border-radius: 5vw;
+  border: 0.1rem solid #eed6d3;
+  padding: 0.5rem 1rem;
+}
+
+.navBar .sortTitleBtn:hover,
+.navBar .addNewBtn:hover {
+  border: 0.1rem solid #67595e;
+  background-color: #eed6d3;
+  color: #67595e;
+  font-weight: bold;
+}
+
+.navBar .sortTitleBtn:focus,
+.navBar .addNewBtn:focus {
+  outline: none;
+  border: 0.1rem solid #67595e;
+  background-color: #eed6d3;
+  color: #67595e;
+  font-weight: bold;
+}
+
+.addNewModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #67595eea;
+  color: white;
+}
+
+.addNewModal .addNewForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #e8b4b8ba;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  width: 70%;
+  border-radius: 3vw;
+  border: 0.1rem solid #eed6d3;
+}
+
+.addNewModal .addNewForm h2 {
+  color: #67595e;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem double #eed6d3;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.addNewModal .addNewForm .closeBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 0%;
+  right: 5%;
+  margin: 1rem;
+  border: none;
+  color: white;
+  background-color: #a49393;
+  border-radius: 5vw;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid #eed6d3;
+}
+
+.addNewModal .addNewForm .closeBtn:hover {
+  border: 0.1rem solid #67595e;
+  background-color: #eed6d3;
+  color: #67595e;
+  font-weight: bold;
+}
+
+.addNewModal .addNewForm .title {
+  margin: 1rem;
+  font-weight: bold;
+}
+
+.addNewModal .addNewForm .title .titleInput {
+  margin-left: 1rem;
+  border-radius: 5vw;
+  padding: 0.5rem 1rem;
+  width: 40vw;
+  outline: none;
+  border: 0.1rem solid #eed6d3;
+}
+
+.addNewModal .addNewForm .title .titleInput:focus {
+  border: 0.2rem solid #e98e96;
+}
+
+.addNewModal .addNewForm .addNewBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1rem;
+  border: none;
+  color: white;
+  background-color: #a49393;
+  border-radius: 5vw;
+  border: 0.1rem solid #eed6d3;
+  padding: 0.5rem 1rem;
+}
+
+.addNewModal .addNewForm .addNewBtn:hover {
+  border: 0.1rem solid #67595e;
+  background-color: #eed6d3;
+  color: #67595e;
+  font-weight: bold;
+}
+
+.addNewModal .addNewForm .addNewBtn:focus {
+  outline: none;
+  border: 0.1rem solid #67595e;
+  background-color: #eed6d3;
+  color: #67595e;
+  font-weight: bold;
+}
+/*# sourceMappingURL=NavBar.css.map */
