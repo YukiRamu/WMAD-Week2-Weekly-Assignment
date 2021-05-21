@@ -1,6 +1,6 @@
 //import './App.css';
 import React, { Component } from 'react';
-import Photo from "./component/Photo/Photo"; 
+import Photo from "./component/Photo/Photo";
 import Form from "./component/Form/Form";
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
         }
         res.json()
           .then(data => {
-           const photoData = data.filter(elem => elem.id < 20 ); 
+            const photoData = data.filter(elem => elem.id < 20);
             this.setState({
               photos: photoData
             });
@@ -88,8 +88,8 @@ class App extends Component {
 
   render() {
 
-    const {photos} = this.state; 
-    
+    const { photos } = this.state;
+
     return (
       <>
         <header className="App-header">
