@@ -1,31 +1,31 @@
 import './App.css';
-import React from 'react';
-//import statement
+import React, { Component } from 'react';
+import Form from "./component/Form/Form";
+//import function
 
-class App extends React.Component {
+class App extends Component {
+  //fetch API (Yuri)
 
-  //fetch API
+  //delete function (Yuri)
 
-  //delete function
-
-  //edit function
+  //edit function (Yuki)
   //display none --> blockにするfunction
 
-  //================ rendering =============
   render() {
     return (
       <>
         <header className="App-header">
           <h1>Weekly Assignment</h1>
         </header>
-        {/* Photo.js : Child Component 1 */}
-        <Photo />
-        {/* Form.js : Child Component 2 */}
+        {/* Photo.js */}
+
+        {/* Form.js */}
         <Form />
       </>
     );
   }
-
 }
 
 export default App;
+
+
