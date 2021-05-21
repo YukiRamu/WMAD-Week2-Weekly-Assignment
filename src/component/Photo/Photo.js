@@ -7,8 +7,9 @@ export default function Photo(props) {
 
         <div className= "App">
 
-            {props.photos.map((photo, index) => (                
-                <div key = {index} className="borderSolid">
+            {props.photos.map((photo, index) => (
+
+                <div key = {index} >
                     <p>title: {photo.title}</p>
                     <img src= {photo.thumbnailUrl} alt="colorphoto" />
                     <button
@@ -18,8 +19,15 @@ export default function Photo(props) {
                     >
                         {''}
                         Delete Photo
-                </button>
-            </div>
+                    </button>
+                    <button 
+                        onClick = {() => {
+                            props.editTitle(photo.id); 
+                        }}
+                    >
+                        Edit Title
+                    </button>
+                </div>
             ))}
         </div>
     ); 

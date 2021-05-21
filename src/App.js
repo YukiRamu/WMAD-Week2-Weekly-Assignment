@@ -96,7 +96,8 @@ class App extends Component {
           <h1>React Photo Gallery <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button></h1>
         </header>
         {/* Photo.js : Child Component 1 : Yuri */}
-        < Photo photos={photos} deletePhotos={this.deletePhotos} />
+        < Photo photos={photos} deletePhotos = {this.deletePhotos} editTitle = {this.editTitle} />; 
+
 
         {/* Filter.js : Child Component 3: Yuki */}
         <nav className="navBar">
