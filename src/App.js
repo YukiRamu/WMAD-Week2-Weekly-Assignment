@@ -19,10 +19,8 @@ class App extends Component {
         }
         res.json()
           .then(data => {
-            let filteredData = data.filter(elem => elem.id <= 20);
-            console.log(filteredData);
             this.setState({
-              photos: filteredData
+              photos: data
             });
           });
       });
