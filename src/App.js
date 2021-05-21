@@ -1,19 +1,38 @@
 import './App.css';
 import React, { Component } from 'react';
+import Photo from "./Photo"; 
 import Form from "./component/Form/Form";
-//import function
 
 class App extends Component {
-  state = {
-    formDisplay: "block" //default none
-  };
-
   //fetch API (Yuri)
-
+  state = {
+    photos: []
+    formDisplay: "block" //default none
+  };  
+  
+ //fetch API (Yuri)
+  componentDidMount () {
+    fetch ("https://jsonplaceholder.typicode.com/photos")
+    .then(res => {
+      if (res.status !== 200){
+        console.log (`This is a error ${res.status}`); 
+      }
+      res.json()
+      .then(data => {
+        this.setState({
+          photos:data
+        }); 
+      }); 
+    }); 
+  }
+  
+  /* **************** Photo.js control (Yuri)　**************** */
   //delete method (Yuri)
+  
+  
 
-  /* **************** Form.js control **************** */
-  //edit method (Yuki)
+  /* **************** Form.js control (Yuki)　**************** */
+  //edit method
   editTitle = () => {
     //show modal
     this.setState({
@@ -40,14 +59,15 @@ class App extends Component {
   };
 
   render() {
+    const {photos} = this.state; 
     return (
       <>
         <header className="App-header">
           <h1>React Photo Gallery</h1>
         </header>
-        {/* Photo.js */}
-
-        {/* Form.js */}
+        {/* Photo.js : Child Component 1: Yuri */}
+        < Photo photos = {photos} deletePhotos = {this.deletePhotos}/>; 
+        {/* Form.js : Child Component 2: Yuki */}
         <Form
           formDisplay={this.state.formDisplay}
           saveChange={this.saveChange}
@@ -58,5 +78,3 @@ class App extends Component {
 }
 
 export default App;
-
-
