@@ -1,4 +1,4 @@
-import './App.css';
+//import './App.css';
 import React from 'react';
 
 export default function Photo(props) {
@@ -16,7 +16,7 @@ export default function Photo(props) {
                             props.deletePhotos(photo.id); 
                         }}
                     >
-                        {" "}
+                        {''}
                         Delete Photo
                 </button>
             </div>

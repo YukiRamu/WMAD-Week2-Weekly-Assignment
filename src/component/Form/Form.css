@@ -1,1 +1,117 @@
-/* No CSS *//*# sourceMappingURL=Form.css.map */
+.formModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #67595eea;
+  color: white;
+}
+
+.formModal .editForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #e8b4b8ba;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  width: 70%;
+  border-radius: 3vw;
+  border: 0.1rem solid #EED6D3;
+}
+
+.formModal .editForm h2 {
+  color: #67595E;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem double #EED6D3;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.formModal .editForm .closeBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 0%;
+  right: 5%;
+  margin: 1rem;
+  border: none;
+  color: white;
+  background-color: #A49393;
+  border-radius: 5vw;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid #EED6D3;
+}
+
+.formModal .editForm .closeBtn:hover {
+  border: 0.1rem solid #67595E;
+  background-color: #EED6D3;
+  color: #67595E;
+  font-weight: bold;
+}
+
+.formModal .editForm .oldTitle {
+  margin: 1rem;
+}
+
+.formModal .editForm .oldTitle span {
+  font-weight: bold;
+}
+
+.formModal .editForm .newTitle {
+  margin: 1rem;
+  font-weight: bold;
+}
+
+.formModal .editForm .newTitle .titleInput {
+  margin-left: 1rem;
+  border-radius: 5vw;
+  padding: 0.5rem 1rem;
+  width: 40vw;
+  outline: none;
+  border: 0.1rem solid #EED6D3;
+}
+
+.formModal .editForm .newTitle .titleInput:focus {
+  border: 0.2rem solid #e98e96;
+}
+
+.formModal .editForm .saveBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1rem;
+  border: none;
+  color: white;
+  background-color: #A49393;
+  border-radius: 5vw;
+  border: 0.1rem solid #EED6D3;
+  padding: 0.5rem 1rem;
+}
+
+.formModal .editForm .saveBtn:hover {
+  border: 0.1rem solid #67595E;
+  background-color: #EED6D3;
+  color: #67595E;
+  font-weight: bold;
+}
+
+.formModal .editForm .saveBtn:focus {
+  outline: none;
+  border: 0.1rem solid #67595E;
+  background-color: #EED6D3;
+  color: #67595E;
+  font-weight: bold;
+}
+/*# sourceMappingURL=Form.css.map */

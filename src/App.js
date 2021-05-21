@@ -1,35 +1,82 @@
-import './App.css';
-import React from 'react';
-import Photo from "./Photo"; 
+//import './App.css';
+import React, { Component } from 'react';
+import Photo from "./component/Photo/Photo"; 
+import Form from "./component/Form/Form";
 
-//import statement
-
-class App extends React.Component {
+class App extends Component {
   //fetch API (Yuri)
-
   state = {
-    photos: []
-  };  
+    photos: [],
+    formDisplay: "none", //default none
+    singlePhoto: {} //for form
+  };
 
-  componentDidMount () {
-    fetch ("https://jsonplaceholder.typicode.com/photos")
-    .then(res => {
-      if (res.status !== 200){
-        console.log (`This is a error ${res.status}`); 
-      }
-
-      res.json()
-      .then(data => {
-        this.setState({
-          photos:data
-        }); 
-      }); 
-    }); 
+  //fetch API (Yuri)
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then(res => {
+        if (res.status !== 200) {
+          console.log(`This is a error ${res.status}`);
+        }
+        res.json()
+          .then(data => {
+            const photoData = data.filter(data => data.id < 20 ); 
+            this.setState({
+              photos: photoData
+            });
+            console.log(this.state.photos)
+          });
+      });
   }
 
+  /* **************** Photo.js control (Yuri) **************** */
+  //delete method (Yuri)
 
-  //edit function
-  //display none --> blockにするfunction
+
+
+  /* **************** Form.js control (Yuki) **************** */
+  //edit method : will get id as a parameter from Photo.js
+  editTitle = (id) => {
+    //find the element that matches id parameter
+    let targetPhoto = this.state.photos.find(elem => elem.id === id); //object
+
+    this.setState({
+      singlePhoto: {
+        id: id,
+        title: targetPhoto.title
+      }
+    });
+
+    //show modal
+    this.setState({
+      formDisplay: "block"
+    });
+  };
+
+  //close button clicked
+  closeForm = () => {
+    //hide modal
+    this.setState({
+      formDisplay: "none"
+    });
+  };
+
+  //save change method
+  saveChange = (e) => {
+    e.preventDefault();
+
+    //find target object and assign new title
+    let targetPhoto = this.state.photos.find(elem => elem.id == e.target[1].dataset.id); //id is string
+    targetPhoto["title"] = e.target[1].value;
+
+    //update state photo
+    this.state.photos.splice(e.target[1].dataset.id - 1, 1, targetPhoto);
+
+    //hide modal
+    this.setState({
+      formDisplay: "none"
+    });
+  };
 
   render() {
 
@@ -38,12 +85,21 @@ class App extends React.Component {
     return (
       <>
         <header className="App-header">
-          <h1>Weekly Assignment</h1>
+          <h1>React Photo Gallery <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button></h1>
         </header>
         {/* Photo.js : Child Component 1 */}
         < Photo photos={photos} deletePhotos = {this.deletePhotos}/>; 
         {/* Form.js : Child Component 2 */}
 
+        {/* Photo.js : Child Component 1: Yuri */}
+        < Photo photos={photos} deletePhotos={this.deletePhotos} editTitle={this.editTitle} />
+
+        {/* Form.js : Child Component 2: Yuki */}
+        <Form
+          singlePhoto={this.state.singlePhoto}
+          formDisplay={this.state.formDisplay}
+          saveChange={this.saveChange}
+          closeForm={this.closeForm} />
       </>
     );
   }
@@ -52,3 +108,7 @@ class App extends React.Component {
 export default App;
 
 
+// Testing Purpose
+// let filteredData = data.filter(elem => elem.id <= 20);
+// console.log(filteredData);
+// <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button>
