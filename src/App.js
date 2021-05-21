@@ -91,6 +91,12 @@ class App extends Component {
         < Photo photos={photos} deletePhotos = {this.deletePhotos}/>; 
         {/* Form.js : Child Component 2 */}
 
+        {/* Filter.js : Child Component 3: Yuki */}
+        <nav className="navBar">
+          <button type="button">Sort by title</button>
+          <button type="button">Sort by color</button>
+        </nav>
+
         {/* Photo.js : Child Component 1: Yuri */}
         < Photo photos={photos} deletePhotos={this.deletePhotos} editTitle={this.editTitle} />
 
