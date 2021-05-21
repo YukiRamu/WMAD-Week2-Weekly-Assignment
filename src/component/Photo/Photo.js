@@ -2,6 +2,7 @@
 import React from 'react';
 
 export default function Photo(props) {
+    console.log(props)
     return (
 
         <div className= "App">
@@ -18,8 +19,15 @@ export default function Photo(props) {
                     >
                         {''}
                         Delete Photo
-                </button>
-            </div>
+                    </button>
+                    <button 
+                        onClick = {() => {
+                            props.editTitle(photo.id); 
+                        }}
+                    >
+                        Edit Title
+                    </button>
+                </div>
             ))}
         </div>
     ); 
