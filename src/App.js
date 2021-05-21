@@ -20,11 +20,10 @@ class App extends Component {
         }
         res.json()
           .then(data => {
-            const photoData = data.filter(data => data.id < 20 ); 
+           const photoData = data.filter(elem => elem.id < 20 ); 
             this.setState({
               photos: photoData
             });
-            console.log(this.state.photos)
           });
       });
   }
@@ -87,18 +86,14 @@ class App extends Component {
         <header className="App-header">
           <h1>React Photo Gallery <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button></h1>
         </header>
-        {/* Photo.js : Child Component 1 */}
+        {/* Photo.js : Child Component 1 : Yuri */}
         < Photo photos={photos} deletePhotos = {this.deletePhotos}/>; 
-        {/* Form.js : Child Component 2 */}
 
         {/* Filter.js : Child Component 3: Yuki */}
         <nav className="navBar">
           <button type="button">Sort by title</button>
           <button type="button">Sort by color</button>
         </nav>
-
-        {/* Photo.js : Child Component 1: Yuri */}
-        < Photo photos={photos} deletePhotos={this.deletePhotos} editTitle={this.editTitle} />
 
         {/* Form.js : Child Component 2: Yuki */}
         <Form
