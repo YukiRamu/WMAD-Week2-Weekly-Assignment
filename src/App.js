@@ -25,7 +25,7 @@ class App extends Component {
         }
         res.json()
           .then(data => {
-            const photoData = data.filter(elem => elem.id < 20);
+            const photoData = data.filter(elem => elem.id <= 30);
             this.setState({
               photos: photoData
             });
@@ -45,11 +45,20 @@ class App extends Component {
 
   /* **************** NavBar.js control (Yuki) **************** */
   /** sort by title **/
-  sortByTitle = () => {
-    //alphabetical sort : ascending order
-    let sortedPhotos = this.state.photos.sort((a, b) =>
-      a.title.split(' ')[0] < b.title.split(' ')[0] ? -1 : 1
-    );
+  sortByTitle = (order) => {
+    let sortedPhotos;
+    if (order === "asc") {
+      //alphabetical sort : ascending order
+      sortedPhotos = this.state.photos.sort((a, b) =>
+        a.title.split(' ')[0] < b.title.split(' ')[0] ? -1 : 1
+      );
+    } else {
+      //alphabetical sort : descending order
+      sortedPhotos = this.state.photos.sort((a, b) =>
+        a.title.split(' ')[0] > b.title.split(' ')[0] ? -1 : 1
+      );
+    }
+
     //setState
     this.setState({
       photos: sortedPhotos
