@@ -93,6 +93,11 @@ class App extends Component {
       url: e.target[2].value
     });
 
+    //clear input
+    e.target[1].value = "";
+    e.target[2].value = "";
+    this.setState({ newImgUrl: "" });
+
     //hide modal
     this.setState({
       editDisplay: "none"
@@ -137,6 +142,9 @@ class App extends Component {
     //update state photo
     this.state.photos.splice(e.target[1].dataset.id - 1, 1, targetPhoto);
 
+    //clear input
+    e.target[1].value = "";
+    
     //hide modal
     this.setState({
       formDisplay: "none"
