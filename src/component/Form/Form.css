@@ -26,14 +26,14 @@
   padding: 2rem;
   width: 70%;
   border-radius: 3vw;
-  border: 0.1rem solid #EED6D3;
+  border: 0.1rem solid #eed6d3;
 }
 
 .formModal .editForm h2 {
-  color: #67595E;
+  color: #67595e;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 0.1rem double #EED6D3;
+  border-bottom: 0.1rem double #eed6d3;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -48,16 +48,16 @@
   margin: 1rem;
   border: none;
   color: white;
-  background-color: #A49393;
+  background-color: #a49393;
   border-radius: 5vw;
   padding: 0.5rem 1rem;
-  border: 0.1rem solid #EED6D3;
+  border: 0.1rem solid #eed6d3;
 }
 
 .formModal .editForm .closeBtn:hover {
-  border: 0.1rem solid #67595E;
-  background-color: #EED6D3;
-  color: #67595E;
+  border: 0.1rem solid #67595e;
+  background-color: #eed6d3;
+  color: #67595e;
   font-weight: bold;
 }
 
@@ -80,7 +80,7 @@
   padding: 0.5rem 1rem;
   width: 40vw;
   outline: none;
-  border: 0.1rem solid #EED6D3;
+  border: 0.1rem solid #eed6d3;
 }
 
 .formModal .editForm .newTitle .titleInput:focus {
@@ -94,24 +94,24 @@
   margin: 1rem;
   border: none;
   color: white;
-  background-color: #A49393;
+  background-color: #a49393;
   border-radius: 5vw;
-  border: 0.1rem solid #EED6D3;
+  border: 0.1rem solid #eed6d3;
   padding: 0.5rem 1rem;
 }
 
 .formModal .editForm .saveBtn:hover {
-  border: 0.1rem solid #67595E;
-  background-color: #EED6D3;
-  color: #67595E;
+  border: 0.1rem solid #67595e;
+  background-color: #eed6d3;
+  color: #67595e;
   font-weight: bold;
 }
 
 .formModal .editForm .saveBtn:focus {
   outline: none;
-  border: 0.1rem solid #67595E;
-  background-color: #EED6D3;
-  color: #67595E;
+  border: 0.1rem solid #67595e;
+  background-color: #eed6d3;
+  color: #67595e;
   font-weight: bold;
 }
 /*# sourceMappingURL=Form.css.map */

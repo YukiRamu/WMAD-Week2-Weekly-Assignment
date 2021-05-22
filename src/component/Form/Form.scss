@@ -1,3 +1,5 @@
+@import "../../colors";
+
 .formModal {
   position: fixed;
   top: 0;
@@ -5,25 +7,25 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: #67595eea;
-  color: white;
+  background-color: $bgColor1TR;
+  color: $white;
   .editForm {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #e8b4b8ba;
+    background-color: $bgColor3TR;
     display: flex;
     flex-direction: column;
     padding: 2rem;
     width: 70%;
     border-radius: 3vw;
-    border: 0.1rem solid #EED6D3;
+    border: 0.1rem solid $color1;
     h2 {
-      color: #67595E;
+      color: $color2;
       margin-bottom: 2rem;
       padding-bottom: 1rem;
-      border-bottom: 0.1rem double #EED6D3;
+      border-bottom: 0.1rem double $color1;
       font-weight: bold;
       text-transform: uppercase;
     }
@@ -34,15 +36,15 @@
       right: 5%;
       margin: 1rem;
       border: none;
-      color: white;
-      background-color: #A49393;
+      color: $white;
+      background-color: $bgColor2;
       border-radius: 5vw;
       padding: 0.5rem 1rem;
-      border: 0.1rem solid #EED6D3;
+      border: 0.1rem solid $color1;
       &:hover {
-        border: 0.1rem solid #67595E;
-        background-color: #EED6D3;
-        color: #67595E;
+        border: 0.1rem solid $color2;
+        background-color: $color1;
+        color: $color2;
         font-weight: bold;
       }
     }
@@ -61,9 +63,9 @@
         padding: 0.5rem 1rem;
         width: 40vw;
         outline: none;
-        border: 0.1rem solid #EED6D3;
+        border: 0.1rem solid $color1;
         &:focus {
-          border: 0.2rem solid #e98e96;
+          border: 0.2rem solid $color3;
         }
       }
     }
@@ -71,22 +73,22 @@
       width: fit-content;
       margin: 1rem;
       border: none;
-      color: white;
-      background-color: #A49393;
+      color: $white;
+      background-color: $bgColor2;
       border-radius: 5vw;
-      border: 0.1rem solid #EED6D3;
+      border: 0.1rem solid $color1;
       padding: 0.5rem 1rem;
       &:hover {
-        border: 0.1rem solid #67595E;
-        background-color: #EED6D3;
-        color: #67595E;
+        border: 0.1rem solid $color2;
+        background-color: $color1;
+        color: $color2;
         font-weight: bold;
       }
       &:focus {
         outline: none;
-        border: 0.1rem solid #67595E;
-        background-color: #EED6D3;
-        color: #67595E;
+        border: 0.1rem solid $color2;
+        background-color: $color1;
+        color: $color2;
         font-weight: bold;
       }
     }
