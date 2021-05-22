@@ -62,6 +62,7 @@
   width: 70%;
   border-radius: 3vw;
   border: 0.1rem solid #eed6d3;
+  max-height: 80%;
 }
 
 .addNewModal .addNewForm h2 {
@@ -96,12 +97,16 @@
   font-weight: bold;
 }
 
-.addNewModal .addNewForm .title {
+.addNewModal .addNewForm .title,
+.addNewModal .addNewForm .imgUrl {
   margin: 1rem;
   font-weight: bold;
 }
 
-.addNewModal .addNewForm .title .titleInput {
+.addNewModal .addNewForm .title .titleInput,
+.addNewModal .addNewForm .title .urlInput,
+.addNewModal .addNewForm .imgUrl .titleInput,
+.addNewModal .addNewForm .imgUrl .urlInput {
   margin-left: 1rem;
   border-radius: 5vw;
   padding: 0.5rem 1rem;
@@ -110,11 +115,28 @@
   border: 0.1rem solid #eed6d3;
 }
 
-.addNewModal .addNewForm .title .titleInput:focus {
+.addNewModal .addNewForm .title .titleInput:focus,
+.addNewModal .addNewForm .title .urlInput:focus,
+.addNewModal .addNewForm .imgUrl .titleInput:focus,
+.addNewModal .addNewForm .imgUrl .urlInput:focus {
   border: 0.2rem solid #e98e96;
 }
 
+.addNewModal .addNewForm .preview {
+  margin: 1rem;
+  font-weight: bold;
+}
+
+.addNewModal .addNewForm .preview .previewImg {
+  width: 15vw;
+  height: 30vh;
+  margin-left: 2rem;
+}
+
 .addNewModal .addNewForm .addNewBtn {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
