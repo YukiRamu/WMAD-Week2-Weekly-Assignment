@@ -1,8 +1,8 @@
-//import './App.css';
 import React, { Component } from 'react';
 import Photo from "./component/Photo/Photo";
 import Form from "./component/Form/Form";
 import NavBar from "./component/NavBar/NavBar";
+
 
 class App extends Component {
   //fetch API (Yuri)
@@ -133,7 +133,11 @@ class App extends Component {
           editDisplay={this.state.editDisplay} />
 
         {/* Photo.js : Child Component 1 : Yuri */}
-        < Photo photos={photos} deletePhotos = {this.deletePhotos} editTitle = {this.editTitle} />; 
+       
+        < Photo 
+          photos= {photos} 
+          deletePhotos = {this.deletePhotos} 
+          editTitle = {this.editTitle} />; 
 
 
         {/* Form.js : Child Component 2: Yuki */}
