@@ -62,7 +62,6 @@
   width: 70%;
   border-radius: 3vw;
   border: 0.1rem solid #eed6d3;
-  overflow-y: scroll;
   max-height: 80%;
 }
 

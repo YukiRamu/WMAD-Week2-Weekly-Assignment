@@ -11,7 +11,8 @@ class App extends Component {
     photos: [],
     formDisplay: "none", //edit form
     editDisplay: "none", //add new form
-    newImgUrl: "",
+    newImgUrl: "", //add new form
+    previewDisplay: "none", //add new form
     singlePhoto: {} //for form
   };
 
@@ -57,18 +58,22 @@ class App extends Component {
 
   /** add new image form **/
   addNewImage = () => {
-    console.log("add new clicked");
     //show modal
     this.setState({
-      editDisplay: "block"
+      editDisplay: "block",
     });
   };
 
   //show preview image
   showPreview = (e) => {
-    this.setState({
-      newImgUrl: e.target.value
-    });
+    //hide preview section when url input is empty
+    e.target.value === "" ?
+      this.setState({
+        previewDisplay: "none"
+      }) : this.setState({
+        newImgUrl: e.target.value,
+        previewDisplay: "block"
+      });
   };
 
   //close button clicked
@@ -82,26 +87,30 @@ class App extends Component {
   //save new image
   saveNewImg = (e) => {
     e.preventDefault();
+    //validation check
+    if ((e.target[1].value === "") || (e.target[2].value === "")) {
+      alert("Please enter both title and image url.");
+    } else {
+      let lastIndex = this.state.photos.length;
+      //increment the id and add a new url and title
+      this.state.photos.splice(0, 0, {
+        albumId: 1,
+        id: lastIndex + 1,
+        thumbnailUrl: e.target[2].value,
+        title: e.target[1].value,
+        url: e.target[2].value
+      });
 
-    let lastIndex = this.state.photos.length;
-    //increment the id and add a new url and title
-    this.state.photos.splice(0, 0, {
-      albumId: 1,
-      id: lastIndex + 1,
-      thumbnailUrl: e.target[2].value,
-      title: e.target[1].value,
-      url: e.target[2].value
-    });
+      //clear input
+      e.target[1].value = "";
+      e.target[2].value = "";
+      this.setState({ newImgUrl: "" });
 
-    //clear input
-    e.target[1].value = "";
-    e.target[2].value = "";
-    this.setState({ newImgUrl: "" });
-
-    //hide modal
-    this.setState({
-      editDisplay: "none"
-    });
+      //hide modal
+      this.setState({
+        editDisplay: "none"
+      });
+    }
   };
 
   /* **************** Form.js control (Yuki) **************** */
@@ -131,24 +140,28 @@ class App extends Component {
     });
   };
 
-  //save change method
+  //save change
   saveChange = (e) => {
     e.preventDefault();
+    //validation check
+    if (e.target[1].value === "") {
+      alert("please enter a new title");
+    } else {
+      //find target object and assign new title
+      let targetPhoto = this.state.photos.find(elem => elem.id == e.target[1].dataset.id); //id is string
+      targetPhoto["title"] = e.target[1].value;
 
-    //find target object and assign new title
-    let targetPhoto = this.state.photos.find(elem => elem.id == e.target[1].dataset.id); //id is string
-    targetPhoto["title"] = e.target[1].value;
+      //update state photo
+      this.state.photos.splice(e.target[1].dataset.id - 1, 1, targetPhoto);
 
-    //update state photo
-    this.state.photos.splice(e.target[1].dataset.id - 1, 1, targetPhoto);
+      //clear input
+      e.target[1].value = "";
 
-    //clear input
-    e.target[1].value = "";
-    
-    //hide modal
-    this.setState({
-      formDisplay: "none"
-    });
+      //hide modal
+      this.setState({
+        formDisplay: "none"
+      });
+    }
   };
 
   render() {
@@ -167,6 +180,7 @@ class App extends Component {
           closeEditForm={this.closeEditForm}
           showPreview={this.showPreview}
           saveNewImg={this.saveNewImg}
+          previewDisplay={this.state.previewDisplay}
           newImgUrl={this.state.newImgUrl}
           editDisplay={this.state.editDisplay} />
 

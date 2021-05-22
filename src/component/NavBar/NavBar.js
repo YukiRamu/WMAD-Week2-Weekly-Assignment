@@ -3,11 +3,12 @@ import "./NavBar.css";
 
 export class NavBar extends Component {
   render() {
+    console.log(this.props)
     return (
       <>
         {/* Navigation button */}
         <nav className="navBar">
-          <button type="button" className="sortTitleBtn" onClick={this.props.sortByTitle}>Sort by title</button>
+          <button type="button" className="sortTitleBtn" onClick={this.props.sortByTitle}>Sort by title ASC</button>
           <button type="button" className="addNewBtn" onClick={this.props.addNewImage}>Add new image</button>
         </nav>
 
@@ -26,7 +27,7 @@ export class NavBar extends Component {
             <input type="text" className="urlInput" placeholder="Enter image URL" onChange={this.props.showPreview} />
             </label>
 
-            <p className="preview">Preview Image :
+            <p className="preview" style={{ "display": this.props.previewDisplay }}>Preview Image :
             <img src={this.props.newImgUrl} alt="preview" className="previewImg"></img>
             </p>
 
