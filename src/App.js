@@ -204,6 +204,10 @@ class App extends Component {
           formDisplay={this.state.formDisplay}
           saveChange={this.saveChange}
           closeForm={this.closeForm} />
+
+          <footer className="footer">
+            <p>@Team Yuri H. & Yuki M. 2021 All right reserved.</p>
+          </footer>
       </>
     );
   }
