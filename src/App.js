@@ -1,4 +1,3 @@
-//import './App.css';
 import React, { Component } from 'react';
 import "./App.css";
 import Photo from "./component/Photo/Photo";
@@ -193,8 +192,11 @@ class App extends Component {
           newImgUrl={this.state.newImgUrl}
           editDisplay={this.state.editDisplay} />
 
-        {/* Photo.js : Child Component 1 : Yuri */}
-        < Photo photos={photos} deletePhotos={this.deletePhotos} editTitle={this.editTitle} />
+        {/* Photo.js : Child Component 1 : Yuri */}       
+        < Photo 
+          photos= {photos} 
+          deletePhotos = {this.deletePhotos} 
+          editTitle = {this.editTitle} />; 
 
         {/* Form.js : Child Component 2: Yuki */}
         <Form

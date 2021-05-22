@@ -1,1 +1,30 @@
-/* No CSS *//*# sourceMappingURL=Photo.css.map */
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mainpage {
+  margin: 0%;
+  padding: 0%;
+}
+
+li {
+  list-style: none;
+  float: center;
+}
+
+p {
+  margin-left: 15px;
+}
+
+img {
+  margin: 0 100px;
+}
+
+button {
+  margin: 10px 10px;
+}
+/*# sourceMappingURL=Photo.css.map */
