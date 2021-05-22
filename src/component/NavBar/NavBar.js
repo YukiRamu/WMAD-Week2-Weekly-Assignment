@@ -3,12 +3,15 @@ import "./NavBar.css";
 
 export class NavBar extends Component {
   render() {
-    console.log(this.props)
+    console.log(this.props);
     return (
       <>
         {/* Navigation button */}
         <nav className="navBar">
-          <button type="button" className="sortTitleBtn" onClick={this.props.sortByTitle}>Sort by title ASC</button>
+          <button type="button" className="sortTitleBtn" onClick={() => { this.props.sortByTitle("asc"); }}>Sort by title ASC</button>
+          <button type="button" className="sortTitleBtn" onClick={() => {
+            this.props.sortByTitle("desc");
+          }}>Sort by title DESC</button>
           <button type="button" className="addNewBtn" onClick={this.props.addNewImage}>Add new image</button>
         </nav>
 
