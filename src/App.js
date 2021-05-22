@@ -80,7 +80,7 @@ class App extends Component {
         previewDisplay: "none"
       }) : this.setState({
         newImgUrl: e.target.value,
-        previewDisplay: "block"
+        previewDisplay: "flex"
       });
   };
 
