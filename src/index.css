@@ -1,6 +1,10 @@
 body {
+  background-image: url(./img/bg1.jpg);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
 }
 
 code {

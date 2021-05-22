@@ -2,6 +2,7 @@
 
 .navBar {
   margin-bottom: 1rem;
+  text-align: center;
   .sortTitleBtn,
   .addNewBtn {
     width: fit-content;
@@ -51,7 +52,7 @@
     //overflow-y: scroll;
     max-height: 80%;
     h2 {
-      color: $color2;
+      color: $white;
       margin-bottom: 2rem;
       padding-bottom: 1rem;
       border-bottom: 0.1rem double $color1;
@@ -95,12 +96,15 @@
       }
     }
     .preview {
+      flex-direction: row;
+      align-items: center;
       margin: 1rem;
       font-weight: bold;
       .previewImg {
-        width: 15vw;
-        height: 30vh;
+        width: 150px;
+        height: 150px;
         margin-left: 2rem;
+        display: block;
       }
     }
     .addNewBtn {
