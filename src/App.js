@@ -11,6 +11,7 @@ class App extends Component {
     photos: [],
     formDisplay: "none", //edit form
     editDisplay: "none", //add new form
+    newImgUrl: "",
     singlePhoto: {} //for form
   };
 
@@ -33,7 +34,6 @@ class App extends Component {
 
   /* **************** Photo.js control (Yuri) **************** */
   //delete method (Yuri)
-
   deletePhotos = id => {
     let currentPhotoList = this.state.photos;
     let newPhotoList = currentPhotoList.filter(photo => photo.id !== id);
@@ -55,7 +55,7 @@ class App extends Component {
     });
   };
 
-  /**  add new image form **/
+  /** add new image form **/
   addNewImage = () => {
     console.log("add new clicked");
     //show modal
@@ -64,8 +64,35 @@ class App extends Component {
     });
   };
 
+  //show preview image
+  showPreview = (e) => {
+    this.setState({
+      newImgUrl: e.target.value
+    });
+  };
+
   //close button clicked
   closeEditForm = () => {
+    //hide modal
+    this.setState({
+      editDisplay: "none"
+    });
+  };
+
+  //save new image
+  saveNewImg = (e) => {
+    e.preventDefault();
+
+    let lastIndex = this.state.photos.length;
+    //increment the id and add a new url and title
+    this.state.photos.splice(0, 0, {
+      albumId: 1,
+      id: lastIndex + 1,
+      thumbnailUrl: e.target[2].value,
+      title: e.target[1].value,
+      url: e.target[2].value
+    });
+
     //hide modal
     this.setState({
       editDisplay: "none"
@@ -117,7 +144,6 @@ class App extends Component {
   };
 
   render() {
-
     const { photos } = this.state;
 
     return (
@@ -131,11 +157,13 @@ class App extends Component {
           sortByTitle={this.sortByTitle}
           addNewImage={this.addNewImage}
           closeEditForm={this.closeEditForm}
+          showPreview={this.showPreview}
+          saveNewImg={this.saveNewImg}
+          newImgUrl={this.state.newImgUrl}
           editDisplay={this.state.editDisplay} />
 
         {/* Photo.js : Child Component 1 : Yuri */}
-        < Photo photos={photos} deletePhotos={this.deletePhotos} editTitle={this.editTitle} />;
-
+        < Photo photos={photos} deletePhotos={this.deletePhotos} editTitle={this.editTitle} />
 
         {/* Form.js : Child Component 2: Yuki */}
         <Form
@@ -149,9 +177,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-// Testing Purpose
-// let filteredData = data.filter(elem => elem.id <= 20);
-// console.log(filteredData);
-// <button onClick={() => { this.editTitle(4); }}>Yuki Form Test Button</button>

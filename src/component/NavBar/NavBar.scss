@@ -46,6 +46,8 @@
     width: 70%;
     border-radius: 3vw;
     border: 0.1rem solid #eed6d3;
+    overflow-y: scroll;
+    max-height: 80%;
     h2 {
       color: #67595e;
       margin-bottom: 2rem;
@@ -73,10 +75,12 @@
         font-weight: bold;
       }
     }
-    .title {
+    .title,
+    .imgUrl {
       margin: 1rem;
       font-weight: bold;
-      .titleInput {
+      .titleInput,
+      .urlInput {
         margin-left: 1rem;
         border-radius: 5vw;
         padding: 0.5rem 1rem;
@@ -88,7 +92,19 @@
         }
       }
     }
+    .preview {
+      margin: 1rem;
+      font-weight: bold;
+      .previewImg {
+        width: 15vw;
+        height: 30vh;
+        margin-left: 2rem;
+      }
+    }
     .addNewBtn {
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
       width: fit-content;
       margin: 1rem;
       border: none;
