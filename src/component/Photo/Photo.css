@@ -4,27 +4,63 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.mainpage {
+.App div {
+  width: 20vw;
+  margin: 1rem;
+}
+
+.App div ul {
+  text-align: center;
   margin: 0%;
   padding: 0%;
 }
 
-li {
+.App div li {
   list-style: none;
   float: center;
+  margin-top: 40px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
-p {
-  margin-left: 15px;
+.App div li:hover {
+  background-color: #c7ebe8b7;
+  border-radius: 1vw;
+  border: 0.1rem solid #ffe9d6;
+  border: none;
+  font-weight: bold;
 }
 
-img {
-  margin: 0 100px;
+.App div li p {
+  min-height: 10vh;
 }
 
-button {
-  margin: 10px 10px;
+.App div li img {
+  width: 150px;
+  height: 150px;
+}
+
+.App div li button {
+  margin: 25px 10px;
+  color: white;
+  background-color: #9b7c98;
+  border: none;
+  border-radius: 5vw;
+  border: 0.1rem solid #ffe9d6;
+  padding: 0.5rem 1rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.App div li button:hover {
+  border: 0.1rem solid #9e859c;
+  background-color: #ffe9d6;
+  color: #9e859c;
+  font-weight: bold;
 }
 /*# sourceMappingURL=Photo.css.map */

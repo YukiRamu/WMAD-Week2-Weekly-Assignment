@@ -12,7 +12,7 @@ export default function Photo(props) {
                 <div key = {index}>
                     <ul className="mainpage">
                         <li>
-                            <p>title: {photo.title}</p>
+                            <p>Title: {photo.title}</p>
                             <img src= {photo.thumbnailUrl} alt="colorphoto" />
                             <br></br>
                             <button
