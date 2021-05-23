@@ -1,27 +1,63 @@
+@import "../../colors";
+
 .App {
     display: flex;
     flex-wrap: wrap;
-}
+    justify-content: center;
 
-.mainpage {
-    margin: 0%;
-    padding: 0%;
+    div {
+        width: 20vw;
+        margin: 1rem;
 
-}
+        ul{
+            text-align: center;
+            margin: 0%;
+            padding: 0%
 
-li {
-    list-style: none;
-    float: center;
-}
+        }
 
-p {
-    margin-left: 15px;
-}
+        li {
+            list-style: none;
+            float: center;
+            margin-top: 40px;
+            transition: all 1s;
+            
+            &:hover {
+                background-color: $bgColor3TR;
+                border-radius: 1vw;
+                border: 0.1rem solid $color1;
+                border: none;
+                font-weight: bold;
+            }
+         
 
-img {
-    margin: 0 100px;
-}
+            p {
+                min-height: 10vh;
+            }
 
-button {
-    margin: 10px 10px;
+            img {
+                width:150px;
+                height:150px;
+            }
+
+            button {
+                margin: 25px 10px;
+                color: $white;
+                background-color: $bgColor2;
+                border: none;
+                border-radius: 5vw;
+                border: 0.1rem solid $color1;
+                padding: 0.5rem 1rem;
+                transition: all 1s;
+
+                &:hover {
+                    border: 0.1rem solid $color2;
+                    background-color: $color1;
+                    color: $color2;
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
 }
