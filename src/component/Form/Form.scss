@@ -42,6 +42,7 @@
       border-radius: 5vw;
       padding: 0.5rem 1rem;
       border: 0.1rem solid $color1;
+      transition: all 1s;
       &:hover {
         border: 0.1rem solid $color2;
         background-color: $color1;
@@ -79,6 +80,7 @@
       border-radius: 5vw;
       border: 0.1rem solid $color1;
       padding: 0.5rem 1rem;
+      transition: all 1s;
       &:hover {
         border: 0.1rem solid $color2;
         background-color: $color1;

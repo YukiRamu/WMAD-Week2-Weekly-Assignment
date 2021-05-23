@@ -1,5 +1,4 @@
 .navBar {
-  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -15,6 +14,9 @@
   border-radius: 5vw;
   border: 0.1rem solid #ffe9d6;
   padding: 0.5rem 1rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  margin-bottom: 0;
 }
 
 .navBar .sortTitleBtn:hover,
@@ -90,6 +92,8 @@
   border-radius: 5vw;
   padding: 0.5rem 1rem;
   border: 0.1rem solid #ffe9d6;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .addNewModal .addNewForm .closeBtn:hover {
@@ -157,6 +161,8 @@
   border-radius: 5vw;
   border: 0.1rem solid #ffe9d6;
   padding: 0.5rem 1rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .addNewModal .addNewForm .addNewBtn:hover {
