@@ -1,3 +1,49 @@
+<h1 style="text-align:center">React Photo Gallery</h1>
+
+## Task Management
+<ul>
+  <li>Parent component : App.js (Yuri & Yuki)</li>
+  <li>Child component : Photo.js (Yuri) - top page, fetch data, delete function</li>
+  <li>Child component : Form.js (Yuki) - edit function</li>
+  <li>Child component : NavBar.js (Yuki) - add new function. sort title (ASC/DESC)</li>
+</ul>
+
+## File Structure
+```bash
+/root
+├─node_modules
+├─public
+    ├─index.html
+    ├─manifest.json
+└─src
+    ├─component **#child components**
+       ├─Form
+       │── Form.js ** #child 2**
+       │── Form.scss  
+       │── Form.css  
+       │── Form.css.map 
+       ├─NavBar     **#child 3**
+       │── NavBar.js  
+       │── NavBar.scss  
+       │── NavBar.css  
+       │── NavBar.css.map 
+       └─Photo      **#child 1**
+       │── Photo.js  
+       │── Photo.scss  
+       │── Photo.css  
+       │── Photo.css.map 
+    ├─img
+    ├─_color.scss
+    ├─App.css
+    ├─App.scss
+    ├─App.css.map
+    ├─App.js ** #parent components**
+    ├─index.css
+    ├─index.js
+    :
+    :    
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
