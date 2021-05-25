@@ -43,7 +43,7 @@ class App extends Component {
   };
 
   /* **************** NavBar.js control (Yuki) **************** */
-  /** sort by title **/
+  /****** sort by title ******/
   sortByTitle = (order) => {
     let sortedPhotos;
     if (order === "asc") {
@@ -64,7 +64,7 @@ class App extends Component {
     });
   };
 
-  /** add new image form **/
+  /****** add new image form ******/
   addNewImage = () => {
     //show modal
     this.setState({
@@ -99,8 +99,10 @@ class App extends Component {
     if ((e.target[1].value === "") || (e.target[2].value === "")) {
       alert("Please enter both title and image url.");
     } else {
+      //get the last index of the current image array
       let lastIndex = this.state.photos.length;
       //increment the id and add a new url and title
+      //add the new image to the first position
       this.state.photos.splice(0, 0, {
         albumId: 1,
         id: lastIndex + 1,
@@ -116,13 +118,14 @@ class App extends Component {
 
       //hide modal
       this.setState({
-        editDisplay: "none"
+        editDisplay: "none",
+        previewDisplay: "none"
       });
     }
   };
 
   /* **************** Form.js control (Yuki) **************** */
-  //edit method : will get id as a parameter from Photo.js
+  //edit method : get id as a parameter from Photo.js
   editTitle = (id) => {
     //find the element that matches id parameter
     let targetPhoto = this.state.photos.find(elem => elem.id === id); //object
@@ -192,11 +195,11 @@ class App extends Component {
           newImgUrl={this.state.newImgUrl}
           editDisplay={this.state.editDisplay} />
 
-        {/* Photo.js : Child Component 1 : Yuri */}       
-        < Photo 
-          photos= {photos} 
-          deletePhotos = {this.deletePhotos} 
-          editTitle = {this.editTitle} />; 
+        {/* Photo.js : Child Component 1 : Yuri */}
+        < Photo
+          photos={photos}
+          deletePhotos={this.deletePhotos}
+          editTitle={this.editTitle} />;
 
         {/* Form.js : Child Component 2: Yuki */}
         <Form
@@ -205,9 +208,9 @@ class App extends Component {
           saveChange={this.saveChange}
           closeForm={this.closeForm} />
 
-          <footer className="footer">
-            <p>@Team Yuri H. & Yuki M. 2021 All right reserved.</p>
-          </footer>
+        <footer className="footer">
+          <p>@Team Yuri H. & Yuki M. 2021 All right reserved.</p>
+        </footer>
       </>
     );
   }
