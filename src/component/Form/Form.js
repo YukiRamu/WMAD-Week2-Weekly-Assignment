@@ -3,7 +3,6 @@ import "./Form.css";
 
 export default class Form extends Component {
   render() {
-    //console.log(this.props);
     return (
       <>
         <div className="formModal" style={{ "display": this.props.formDisplay }}>

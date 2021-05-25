@@ -3,7 +3,6 @@ import "./NavBar.css";
 
 export class NavBar extends Component {
   render() {
-    console.log(this.props);
     return (
       <>
         {/* Navigation button */}
@@ -22,14 +21,17 @@ export class NavBar extends Component {
 
             <button type="button" className="closeBtn" onClick={this.props.closeEditForm}>Close</button>
 
+            {/* title input */}
             <label className="title">Title:
             <input type="text" className="titleInput" placeholder="Enter your title" />
             </label>
 
+            {/* img url input */}
             <label className="imgUrl">Image URL:
             <input type="text" className="urlInput" placeholder="Enter image URL" onChange={this.props.showPreview} />
             </label>
 
+            {/* preview section */}
             <p className="preview" style={{ "display": this.props.previewDisplay }}>Preview Image :
             <img src={this.props.newImgUrl} alt="preview" className="previewImg"></img>
             </p>
